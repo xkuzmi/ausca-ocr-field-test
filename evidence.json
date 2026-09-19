@@ -1,0 +1,490 @@
+{
+  "summary": "One real scanned public-domain JPEG was committed, purchased through the live $0.25 x402 Document OCR route, schema-validated, digest-matched, and verified through its public Ausca receipt.",
+  "claim_id": "87261269-8e9a-404c-961e-f7c718168cc2",
+  "source": {
+    "page_url": "https://commons.wikimedia.org/wiki/File:FourMillion16.png",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/FourMillion16.png",
+    "license": "Public domain",
+    "transformation": "Original scan converted locally to a 1200 px-wide JPEG with ffmpeg quality 3 after the under-limit 4.45 MiB PNG received three HTTP 503 artifact-ingress responses.",
+    "media_type": "image/jpeg",
+    "size_bytes": 232395,
+    "content_digest": "sha256:d6d8bad0aff72a74e0454a3ee7bf99c8c48c8e83eeb3570df1e52b24ec6d76eb",
+    "artifact_ref": "runx:artifact:sha256:26c046818f34e1b63b4e9e3d8a0fc7569bc2b0f4835ed19e5603bf69c48c673c"
+  },
+  "offer": {
+    "offer_id": "document.ocr",
+    "revision": "ocr-fixed-r7",
+    "offer_revision_digest": "sha256:024ce18fdfd7d108528b2a4780dbbc5dd9988bcb328a729b7ff2b498697e02b9",
+    "input_schema_digest": "sha256:aa86a0fc7e01438f3f99dc35550f4c3d710795e4302e489de32eae7e403ffd5d",
+    "output_schema_digest": "sha256:d9f05704955fca53ed5813e2522f56d4b9fb95e072f84771a369f780b77741d6",
+    "route": "POST /v1/extract-text",
+    "idempotency_key": "ausca-ocr-5ad2b47f-1241-4026-b551-5e969d8c4a6c"
+  },
+  "invocation_id": "paid_79c71adf-c524-4598-b53c-e6c1b56a72aa",
+  "output_digest": "sha256:fcc9e0f16aee5396f6643d8ff38a0c132a931cf09d3773cce3cd97dda9efc2af",
+  "result_validation": {
+    "retrieval": "inline invocation.output",
+    "elapsed_ms": 0.381,
+    "schema_url": "https://ausca.com/schemas/offers/text-extract.output.schema.json",
+    "schema_digest": "sha256:d9f05704955fca53ed5813e2522f56d4b9fb95e072f84771a369f780b77741d6",
+    "schema_valid": true,
+    "source_digest_matches": true,
+    "output_digest": "sha256:fcc9e0f16aee5396f6643d8ff38a0c132a931cf09d3773cce3cd97dda9efc2af",
+    "text_characters": 999,
+    "line_count": 23
+  },
+  "settled_transaction": "0xd172d6aab154b725fb1b4185c97bd10daec146dd15691e444b7045dcc169ebb7",
+  "receipt_ref": "https://runx.ai/r/d1ff52587e35f061a9b77bfc2f4a4b8f3cb5a54a3fedb0779bf2d1bf8607a040",
+  "receipt_verification": {
+    "public_url_http_status": 200,
+    "public_claim_api_url": "https://api.runx.ai/v1/receipts/notarizations/d1ff52587e35f061a9b77bfc2f4a4b8f3cb5a54a3fedb0779bf2d1bf8607a040",
+    "public_claim_api_http_status": 200,
+    "public_claim_api_elapsed_ms": 2011.086,
+    "publisher": "ausca",
+    "venue": "Ausca",
+    "subject_id": "document.ocr",
+    "subject_label": "Document OCR",
+    "amount_cents": 25,
+    "currency": "USD",
+    "occurred_at": "2026-09-19T21:24:19.565Z",
+    "verified_at": "2026-09-19T21:24:20.343Z"
+  },
+  "observations": [
+    {
+      "step": "discovery",
+      "elapsed_ms": 174.631,
+      "detail": "Fetched the per-offer SKILL.md, OpenAPI, and catalog; selected document.ocr revision ocr-fixed-r7 with revision digest sha256:024ce18fdfd7d108528b2a4780dbbc5dd9988bcb328a729b7ff2b498697e02b9."
+    },
+    {
+      "step": "artifact_commit",
+      "elapsed_ms": 2440.964,
+      "detail": "Committed 232395 image/jpeg bytes as runx:artifact:sha256:26c046818f34e1b63b4e9e3d8a0fc7569bc2b0f4835ed19e5603bf69c48c673c; returned content digest matched sha256:d6d8bad0aff72a74e0454a3ee7bf99c8c48c8e83eeb3570df1e52b24ec6d76eb."
+    },
+    {
+      "step": "artifact_recovery",
+      "elapsed_ms": 8627.324,
+      "detail": "The original 4,456,043-byte PNG was under the advertised 10 MiB limit but POST /v1/artifacts returned HTTP 503 3 times with the same commit idempotency key. I created a truthful 1200 px JPEG derivative of the same scan and committed that smaller input instead; no payment request had been sent."
+    },
+    {
+      "step": "challenge",
+      "elapsed_ms": 2208.12,
+      "detail": "Unsigned POST /v1/extract-text returned HTTP 402; live x402 v2 requirement recorded exactly in challenge.payment_requirement.",
+      "requirement": {
+        "accepts": [
+          {
+            "amount": "250000",
+            "asset": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+            "extra": {
+              "name": "USD Coin",
+              "version": "2"
+            },
+            "maxTimeoutSeconds": 300,
+            "network": "eip155:8453",
+            "payTo": "0x26572ff23c6c52bfb1a69cb0c9114a8be443b422",
+            "scheme": "exact"
+          }
+        ],
+        "extensions": {
+          "bazaar": {
+            "info": {
+              "input": {
+                "body": {
+                  "idempotency_key": "ausca-x402-discovery-example",
+                  "input": {
+                    "artifact": {
+                      "artifact_ref": "runx:artifact:sha256:1111111111111111111111111111111111111111111111111111111111111111",
+                      "content_digest": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+                      "media_type": "application/pdf"
+                    }
+                  },
+                  "input_schema_digest": "sha256:aa86a0fc7e01438f3f99dc35550f4c3d710795e4302e489de32eae7e403ffd5d",
+                  "offer_id": "document.ocr",
+                  "offer_revision": "ocr-fixed-r7",
+                  "offer_revision_digest": "sha256:024ce18fdfd7d108528b2a4780dbbc5dd9988bcb328a729b7ff2b498697e02b9",
+                  "output_schema_digest": "sha256:d9f05704955fca53ed5813e2522f56d4b9fb95e072f84771a369f780b77741d6"
+                },
+                "bodyType": "json",
+                "method": "POST",
+                "type": "http"
+              },
+              "output": {
+                "example": {
+                  "inspect_url": "/v1/invocations/ausca-discovery-example",
+                  "invocation": {
+                    "invocation_id": "ausca-discovery-example",
+                    "offer_revision_digest": "sha256:024ce18fdfd7d108528b2a4780dbbc5dd9988bcb328a729b7ff2b498697e02b9",
+                    "output": {
+                      "lines": [
+                        {
+                          "confidence": 0.99,
+                          "page": 1,
+                          "text": "scan me"
+                        }
+                      ],
+                      "schema": "ausca.document_ocr.output.v1",
+                      "source_digest": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+                      "text": "scan me"
+                    },
+                    "output_digest": "sha256:1b1057f8369deda528ab95671b785812745810d7dbc259a414adc190ac14c068",
+                    "receipt_ref": {
+                      "public_url": "https://runx.ai/r/0000000000000000000000000000000000000000000000000000000000000000",
+                      "type": "receipt",
+                      "uri": "runx:receipt:discovery-example"
+                    },
+                    "state": "succeeded",
+                    "updated_at": "2026-01-01T00:00:00Z"
+                  },
+                  "status": "accepted"
+                },
+                "type": "json"
+              }
+            },
+            "schema": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "properties": {
+                "input": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "body": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "idempotency_key": {
+                          "maxLength": 128,
+                          "minLength": 16,
+                          "type": "string"
+                        },
+                        "input": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "artifact": {
+                              "allOf": [
+                                {
+                                  "additionalProperties": false,
+                                  "properties": {
+                                    "artifact_ref": {
+                                      "maxLength": 512,
+                                      "minLength": 1,
+                                      "type": "string"
+                                    },
+                                    "content_digest": {
+                                      "pattern": "^sha256:[a-f0-9]{64}$",
+                                      "type": "string"
+                                    },
+                                    "media_type": {
+                                      "maxLength": 200,
+                                      "minLength": 1,
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "artifact_ref",
+                                    "content_digest",
+                                    "media_type"
+                                  ],
+                                  "type": "object"
+                                },
+                                {
+                                  "properties": {
+                                    "media_type": {
+                                      "enum": [
+                                        "application/pdf",
+                                        "image/jpeg",
+                                        "image/png",
+                                        "image/tiff"
+                                      ]
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          "required": [
+                            "artifact"
+                          ],
+                          "type": "object"
+                        },
+                        "input_schema_digest": {
+                          "const": "sha256:aa86a0fc7e01438f3f99dc35550f4c3d710795e4302e489de32eae7e403ffd5d"
+                        },
+                        "offer_id": {
+                          "const": "document.ocr"
+                        },
+                        "offer_revision": {
+                          "const": "ocr-fixed-r7"
+                        },
+                        "offer_revision_digest": {
+                          "const": "sha256:024ce18fdfd7d108528b2a4780dbbc5dd9988bcb328a729b7ff2b498697e02b9"
+                        },
+                        "output_schema_digest": {
+                          "const": "sha256:d9f05704955fca53ed5813e2522f56d4b9fb95e072f84771a369f780b77741d6"
+                        }
+                      },
+                      "required": [
+                        "offer_id",
+                        "offer_revision",
+                        "offer_revision_digest",
+                        "input_schema_digest",
+                        "output_schema_digest",
+                        "input",
+                        "idempotency_key"
+                      ],
+                      "type": "object"
+                    },
+                    "bodyType": {
+                      "enum": [
+                        "json",
+                        "form-data",
+                        "text"
+                      ],
+                      "type": "string"
+                    },
+                    "method": {
+                      "enum": [
+                        "POST"
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "http",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "method",
+                    "bodyType",
+                    "body"
+                  ],
+                  "type": "object"
+                },
+                "output": {
+                  "properties": {
+                    "example": {
+                      "properties": {
+                        "inspect_url": {
+                          "pattern": "^/v1/invocations/[A-Za-z0-9][A-Za-z0-9._:-]*$",
+                          "type": "string"
+                        },
+                        "invocation": {
+                          "properties": {
+                            "invocation_id": {
+                              "maxLength": 128,
+                              "minLength": 1,
+                              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$",
+                              "type": "string"
+                            },
+                            "offer_revision_digest": {
+                              "const": "sha256:024ce18fdfd7d108528b2a4780dbbc5dd9988bcb328a729b7ff2b498697e02b9"
+                            },
+                            "output": {
+                              "additionalProperties": false,
+                              "properties": {
+                                "lines": {
+                                  "items": {
+                                    "additionalProperties": false,
+                                    "properties": {
+                                      "confidence": {
+                                        "maximum": 1,
+                                        "minimum": 0,
+                                        "type": "number"
+                                      },
+                                      "page": {
+                                        "maximum": 100000,
+                                        "minimum": 1,
+                                        "type": "integer"
+                                      },
+                                      "text": {
+                                        "maxLength": 10000,
+                                        "minLength": 1,
+                                        "type": "string"
+                                      }
+                                    },
+                                    "required": [
+                                      "text"
+                                    ],
+                                    "type": "object"
+                                  },
+                                  "maxItems": 20000,
+                                  "type": "array"
+                                },
+                                "schema": {
+                                  "const": "ausca.document_ocr.output.v1",
+                                  "type": "string"
+                                },
+                                "source_digest": {
+                                  "pattern": "^sha256:[0-9a-f]{64}$",
+                                  "type": "string"
+                                },
+                                "text": {
+                                  "maxLength": 200000,
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "schema",
+                                "source_digest",
+                                "text",
+                                "lines"
+                              ],
+                              "type": "object"
+                            },
+                            "output_digest": {
+                              "pattern": "^sha256:[a-f0-9]{64}$",
+                              "type": "string"
+                            },
+                            "receipt_ref": {
+                              "properties": {
+                                "public_url": {
+                                  "format": "uri",
+                                  "maxLength": 2048,
+                                  "pattern": "^https://[^?#]+/r/[a-f0-9]{64}$",
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "const": "receipt"
+                                },
+                                "uri": {
+                                  "maxLength": 512,
+                                  "minLength": 1,
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "type",
+                                "uri"
+                              ],
+                              "type": "object"
+                            },
+                            "state": {
+                              "enum": [
+                                "admitted",
+                                "running",
+                                "succeeded",
+                                "failed",
+                                "cancellation_requested",
+                                "cancelled"
+                              ],
+                              "type": "string"
+                            },
+                            "updated_at": {
+                              "format": "date-time",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "invocation_id",
+                            "offer_revision_digest",
+                            "state",
+                            "updated_at"
+                          ],
+                          "type": "object"
+                        },
+                        "status": {
+                          "const": "accepted"
+                        }
+                      },
+                      "required": [
+                        "status",
+                        "invocation",
+                        "inspect_url"
+                      ],
+                      "type": "object"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "input"
+              ],
+              "type": "object"
+            }
+          },
+          "runx.invocation": {
+            "info": {
+              "canonicalizer_version": "runx.receipt.c14n.v1",
+              "idempotency": {
+                "binding_digest": "sha256:33e896f4a9d22274e6a98889052fd00dae857f24216f7ff1ad684b7452e15b48",
+                "key": "ausca-ocr-5ad2b47f-1241-4026-b551-5e969d8c4a6c"
+              },
+              "input_digest": "sha256:0fc76b21cb74be449de14fc6951d0b3fcc1c08e4dd055438f67fdd753fbb7f0c",
+              "invocation_id": "paid_79c71adf-c524-4598-b53c-e6c1b56a72aa",
+              "offer_revision": {
+                "input_schema_digest": "sha256:aa86a0fc7e01438f3f99dc35550f4c3d710795e4302e489de32eae7e403ffd5d",
+                "offer_id": "document.ocr",
+                "output_schema_digest": "sha256:d9f05704955fca53ed5813e2522f56d4b9fb95e072f84771a369f780b77741d6",
+                "revision": "ocr-fixed-r7",
+                "revision_digest": "sha256:024ce18fdfd7d108528b2a4780dbbc5dd9988bcb328a729b7ff2b498697e02b9"
+              },
+              "package_digest": "sha256:563933d99be61daa514adb7a3338b5d20d3dea628b0f2c78ecbe96382b1c54ff",
+              "purpose": "invocation",
+              "quote_ref": {
+                "type": "provider_event",
+                "uri": "runx:x402-quote:f937b05737e6039ba0b312a27b42d4146878c9f132b5a1b604bb1c22289276bf"
+              }
+            },
+            "schema": {
+              "$ref": "https://schemas.runx.ai/runx/x402/invocation-extension/v1.json"
+            }
+          }
+        },
+        "resource": {
+          "description": "Extract normalized text from a scanned document.",
+          "iconUrl": "https://ausca.com/favicon.svg",
+          "mimeType": "application/json",
+          "serviceName": "Ausca OCR",
+          "tags": [
+            "documents",
+            "ocr"
+          ],
+          "url": "https://ausca.com/v1/extract-text"
+        },
+        "x402Version": 2
+      }
+    },
+    {
+      "step": "payment",
+      "elapsed_ms": 2774.91,
+      "detail": "Retried the identical envelope bytes with PAYMENT-SIGNATURE from 0xb86d458bbE799B75de25D6bF7D7A7908D673e242; settlement transaction 0xd172d6aab154b725fb1b4185c97bd10daec146dd15691e444b7045dcc169ebb7.",
+      "payer": "0xb86d458bbE799B75de25D6bF7D7A7908D673e242",
+      "transaction": "0xd172d6aab154b725fb1b4185c97bd10daec146dd15691e444b7045dcc169ebb7",
+      "amount": "250000",
+      "asset": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+      "network": "eip155:8453",
+      "pay_to": "0x26572ff23c6c52bfb1a69cb0c9114a8be443b422"
+    },
+    {
+      "step": "invocation",
+      "elapsed_ms": 4998.04,
+      "detail": "Signed invocation returned HTTP 202 with status=accepted, invocation_id=paid_79c71adf-c524-4598-b53c-e6c1b56a72aa, and invocation state=succeeded."
+    },
+    {
+      "step": "wait",
+      "elapsed_ms": 13547.498,
+      "detail": "6 explicit readback poll(s) were needed after invoke returned; terminal state was succeeded.",
+      "poll_count": 6
+    },
+    {
+      "step": "result",
+      "elapsed_ms": 0.381,
+      "detail": "Retrieved via inline invocation.output; validated against ausca.document_ocr.output.v1, source_digest matched the committed artifact, and server output_digest=sha256:fcc9e0f16aee5396f6643d8ff38a0c132a931cf09d3773cce3cd97dda9efc2af."
+    },
+    {
+      "step": "receipt",
+      "elapsed_ms": 2469.936,
+      "detail": "Fetched the public receipt page in 458.85 ms (HTTP 200), then its public-claim JSON from api.runx.ai in 2011.086 ms (HTTP 200). The signed public claim names publisher ausca, venue Ausca, subject document.ocr, amount 25 USD cents, occurred_at 2026-09-19T21:24:19.565Z, and verified_at 2026-09-19T21:24:20.343Z."
+    },
+    {
+      "step": "total_elapsed",
+      "elapsed_ms": 21745.691,
+      "detail": "End-to-end elapsed time from discovery fetch through public receipt verification was 21745.691 ms."
+    }
+  ],
+  "redaction": "Private key, agent/operator bearer tokens, PAYMENT-SIGNATURE, cookies, and document bytes are excluded. Request/response facts are preserved with sensitive headers redacted."
+}
